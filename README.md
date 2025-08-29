@@ -1,2 +1,136 @@
-# birthday-wish
-wishing birthday
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3 Page Birthday Card</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a6c1ee);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      color: white;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .page {
+      display: none;
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      animation: fadeIn 1s ease;
+    }
+    .active { display: block; }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ffe066;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #fffaf0;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: #ff6b81;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #ff4757; }
+
+    /* Page 3 big text */
+    .final-text {
+      font-size: 3rem;
+      font-weight: bold;
+      line-height: 1.5;
+      text-shadow: 2px 2px 20px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1 -->
+  <div class="page active" id="page1">
+    <h1>💬 unakeyy</h1>
+    <p style="font-size:1.6rem; font-weight:bold; color:#fff;">
+      "kannadi keela paaru munnadi"  
+    </p>
+    <button class="btn" onclick="nextPage(2)">Click to Open 👉</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page" id="page2">
+    <h1>🎉 Happy 19th Birthday 🎉</h1>
+    <p>to one of the most precious person in my life! ✨</p>
+    <p>
+      From the days when we were little kids, playing and laughing without even realizing how special our bond was, till today me in my 3rd year of college and you stepping into another beautiful year of your life—we’ve grown together in ways that words can hardly explain.
+    </p>
+    <p>
+      I honestly don’t even remember when exactly we became this close, but all I know is… somewhere between our endless talks, silly fights, and unforgettable memories, you became one of the most important person in my life. ❤
+    </p>
+    <p>
+      You are not just a friend—you are someone I can trust blindly, someone I can lean on no matter what happens, and someone who makes me feel like I’m never alone in this world.
+    </p>
+    <p>
+      Every single moment with you feels so special. You’re the kind of person who can light up a dull day just by being there. You’ve seen my best and my worst, yet you’ve stayed by my side—and that’s something I’ll always be grateful for. 🌸
+    </p>
+    <p>
+      On your 19th birthday, I just want to remind you how amazing you are and how lucky I am to have you in my life. May this year bring you endless happiness, success in everything you dream of, and the courage to chase every goal your heart desires. I promise, no matter where life takes us, I’ll always stand by you just like I always have.
+    </p>
+    <p>
+      So here’s to you, to our bond, to the countless memories we’ve made, and to the many more waiting for us in the future. 🥂  
+      Stay the same wonderful, loving, and strong person you are—because you truly mean the world to me.
+    </p>
+    <button class="btn" onclick="nextPage(3)">Next 👉</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page" id="page3">
+    <div class="final-text">
+      🎂🎉🎈🥳💐💝<br>
+      Happy Birthday<br>
+      🎁🎊💞✨🍰🎶
+    </div>
+  </div>
+
+  <script>
+    function nextPage(num) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById("page" + num).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
